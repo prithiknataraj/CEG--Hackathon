@@ -1,0 +1,128 @@
+.navbar {
+  width: 1536px;
+  height: 60px;
+}
+.navbar-brand,.nav-link {
+  color: rgb(255, 255, 255) !important;
+  font-size: 25px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inknut Antiqua;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.navbar-brand {
+  font-size: 35px;
+}
+.form-control {
+  width: 300px;
+}
+.btn-outline-success {
+  background-color: #28a745; 
+  border-color: #28a745; 
+  color: #fff; 
+}
+.btn-outline-success:hover {
+  background-color: #28a745; 
+  border-color: #28a745;
+  color: #fff;
+}
+.dot{
+  color: red;
+}
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.chat-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.chat-input-container {
+  margin-top: auto; 
+  padding-top: 10px; 
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1; 
+}
+.message {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  align-items: flex-start;
+}
+
+.query-box {
+  background-color: #C6C6C6;
+  padding: 10px;
+  border-radius: 19px;
+  flex: 1;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.output-box {
+  background-color: #C6C6C6;
+  padding: 10px;
+  border-radius: 19px;
+  flex: 1;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+/* Ensure the message boxes don't exceed the available width */
+.query-box h4, .output-box h4 {
+  max-width: 100%;
+  font-size: 15px; 
+  font-style: Regular; 
+  text-align: justify; 
+  font-family: Inter; 
+  font-weight: 400; 
+  line-height: normal; 
+  font-stretch: normal; 
+  text-decoration: none;
+}
+
+/* Enable scrolling for the chat history container */
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.bot-qn {
+  width: 50%; /* Set the width to 100% to expand the form */
+  display: flex;
+  align-items: center;
+}
+
+.bot-qn input.doubt {
+  flex: 1; /* Allow the input to take up remaining space */
+  margin-right: 10px; /* Add some spacing between input and button */
+}
+
+.bot-qn button {
+  background-color: #28a745; /* Green color for the button */
+  border-color: #28a745;
+  color: #fff;
+  padding: 10px 20px; /* Adjust padding to make the button more visible */
+  border-radius: 5px;
+}
+
+
+
+
