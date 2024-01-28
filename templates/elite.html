@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arivagam.</title>
+
+    <style>
+      .EP-Body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .EP-Heading {
+        color: Red;
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      .EP-SB {
+        display: flex;
+        flex-direction: row;
+        height: 30rem;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #EP-QR {
+        height: 15rem;
+        width: 15rem;
+        border: 8px solid black;
+      }
+
+      #AA-Button {
+        background-color: white;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      #AA-Button:hover {
+        box-shadow: 2px 2px 2px black;
+      }
+
+      .EP-SB-QR {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+      }
+
+      .EP-SB-C{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+      }
+
+      .EP-SB-CC {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .EP-SB-CC h1 {
+        position: absolute;
+      }
+
+      .EP-SB-CC div {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 0.5rem;
+        margin: 2rem;
+      }
+
+      .EP-SB-CC div button {
+        background-color: transparent;
+        align-items: center;
+        border: none;
+        font-size: 1.5rem;
+      }
+
+      .EP-SB-CC div button:hover {
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="EP-Body">
+      <div>
+        <h1 class="EP-Heading">Elite Pass</h1>
+      </div>
+      <div class="EP-SB">
+        <div class="EP-SB-QR">
+          <div><img src="/landing/static/img/QR.png" alt="" / id="EP-QR"></div>
+          <div>
+            <button type="submit" id="AA-Button">Access Address</button>
+          </div>
+        </div>
+        <div class="EP-SB-C">
+          <h1>Choose your Network</h1>
+          <div class="EP-SB-CC">
+            <div style="background-color: rgb(255, 143, 143);">
+              <button>Polygon- MATIC</button>
+            </div>
+            <div style="background-color: rgb(255, 143, 143);">
+              <button>Ethereum- ETH</button>
+            </div>
+            <div style="background-color: rgb(255, 143, 143);">
+              <button>Avalanche- AVAX</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
