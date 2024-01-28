@@ -1,0 +1,352 @@
+.bot-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.bot-bot {
+  width: 100%;
+  height: 753px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(182, 182, 182, 1);
+}
+.bot-rectangle2 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 87px;
+  position: absolute;
+}
+.bot-rectangle23 {
+  top: 0px;
+  left: 0px;
+  width: 1662px;
+  height: 87px;
+  position: absolute;
+}
+.bot-rectangle24 {
+  top: 23px;
+  right: 15px;
+  width: 400px;
+  height: 35px;
+  position: absolute;
+}
+.bot-text {
+  top: 32.5px;
+  color: rgba(0, 0, 0, 0.5);
+  right: 150px;
+  width: 251px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inika;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-text01 {
+  font-size: 10px;
+}
+.bot-text03 {
+  top: 1px;
+  left: 40px;
+  color: rgb(255, 255, 255);
+  width: 290px;
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inknut Antiqua;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-text04 {
+  color: #ffffff;
+}
+.bot-text05 {
+  color: #e61010;
+}
+.bot-rectangle56 {
+  top: 24px;
+  left: 816px;
+  width: 119px;
+  height: 34px;
+  position: absolute;
+  border-radius: 15px;
+}
+.bot-text06 {
+  top: 10px;
+  left: 272px;
+  width: 790px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inknut Antiqua;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-text07 {
+  color: #ffffff;
+}
+.bot-text08 {
+  color: #000000;
+}
+.bot-rectangle51 {
+  top: 115px;
+  left: 25px;
+  width: 325px;
+  height: 615px;
+  position: absolute;
+}
+.bot-rectangle52 {
+  top: 114px;
+  right: 24px;
+  width: 1120px;
+  height: 615px;
+  position: absolute;
+}
+.bot-rectangle53 {
+  top: 135px;
+  left: 407px;
+  width: 700px;
+  height: 151px;
+  position: absolute;
+  border-radius: 19px;
+}
+.bot-text14 {
+  top: 154px;
+  left: 426px;
+  color: rgba(0, 0, 0, 1);
+  width: 660px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: justify;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-qn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 210px;
+  margin-top: 650px;
+  z-index: 1;
+}
+.bot-qn input {
+  display: flex;
+  flex-basis: 89%;
+  width: 700px;
+  padding: 15px;
+  outline: 1;
+  color: #000000;
+  background: #ffffff;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.bot-qn button {
+  width: 75px;
+  padding: 15px;
+  outline: 1;
+  color: #fff;
+  background: rgb(7, 195, 7);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.boxes {
+  position: absolute;
+  width: 700px; 
+  height: auto;
+  background: #C6C6C6;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+  border-radius: 19px;
+  top: 8px;
+  right: 39px;
+}
+.box {
+  position: absolute;
+  width: 700px; 
+  height: auto;
+  background: #C6C6C6;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+  border-radius: 19px;
+  top: 90px; 
+  left: 387.50px; 
+}
+.boxes h4, .box h4 {
+  font-size: 15px; 
+  font-style: Regular; 
+  text-align: justify; 
+  font-family: Inter; 
+  font-weight: 400; 
+  line-height: normal; 
+  font-stretch: normal; 
+  text-decoration: none;
+}
+.bot-ellipse9 {
+  top: 143px;
+  left: 103px;
+  width: 155px;
+  height: 147px;
+  position: absolute;
+}
+.bot-group33 {
+  top: 333px;
+  left: 38px;
+  width: 288px;
+  height: 226px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.bot-line183 {
+  top: 0px;
+  left: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line1831 {
+  top: 0px;
+  left: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line185 {
+  top: 113px;
+  left: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line1851 {
+  top: 113px;
+  left: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line1852 {
+  top: 113px;
+  left: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line1853 {
+  top: 53px;
+  right: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line1854 {
+  top: 169px;
+  right: -1px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-line187 {
+  top: 226px;
+  left: 0px;
+  width: 288px;
+  height: 1px;
+  position: absolute;
+}
+.bot-text18 {
+  top: 14.6899995803833px;
+  left: 26.341463088989258px;
+  color: rgba(0, 0, 0, 1);
+  width: 228px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-text20 {
+  top: 74.58000183105469px;
+  left: 26.341463088989258px;
+  color: rgba(0, 0, 0, 1);
+  width: 235px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-text22 {
+  top: 131.0800018310547px;
+  left: 26.341463088989258px;
+  color: rgba(0, 0, 0, 1);
+  width: 228px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.bot-text24 {
+  top: 188.7100067138672px;
+  left: 26.341463088989258px;
+  color: rgba(0, 0, 0, 1);
+  width: 228px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.boxes {
+  margin-top: 300px;
+}
+.box {
+  margin-top: 300px;
+}

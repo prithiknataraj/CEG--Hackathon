@@ -1,0 +1,11 @@
+{
+  "name": "arivagam",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "api": "^6.1.1",
+    "parcel-bundler": "^1.6.1",
+    "verbwire": "^1.0.6"
+  },
+  "scripts": {}
+}
