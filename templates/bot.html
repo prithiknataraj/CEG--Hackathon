@@ -1,345 +1,296 @@
-<!-- <!DOCTYPE html>
-<html lang="english">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Bot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Arivagam-Bot</title>
+    <style>
+      .nanba {
+        background-image: url("/static/img/nanba.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
       }
 
-      body {
-        font-weight: 400;
-        font-style: normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+      #nanba-body {
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
+      #nanba-body::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      #nanba-body::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 6px;
+      }
+
+      #nanba-body::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      .fixed-form {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 125, 92, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Center the form and button */
+        align-items: center;
+      }
+      .form-control {
+        width: 200%;
+        margin-right: 10px;
+      }
+      .btn-primary {
+        width: 10%; /* Adjust the width as needed */
+      }
+      .bot-qn {
+        width: 50%; /* Set the width to 100% to expand the form */
+        display: flex;
+        align-items: center;
+      }
+      .bot-qn input.doubt {
+        flex: 1; /* Allow the input to take up remaining space */
+        margin-right: 10px; /* Add some spacing between input and button */
+      }
+      .bot-qn button {
+        background-color: #28a745; /* Green color for the button */
+        border-color: #28a745;
+        color: #fff;
+        padding: 10px 20px; /* Adjust padding to make the button more visible */
+        border-radius: 5px;
+      }
+      .chat-container {
+        max-height: 82.5vh;
+        overflow-y: auto;
+        margin-top: 300px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      .message {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .query-box {
+        background-color: rgba(255, 255, 255, 0.85);
+        color: black;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+        border-radius: 10px;
+      }
+      .output-box {
+        background-color: rgba(222, 109, 81, 0.6);
+        backdrop-filter: blur(3px);
+        width: 100%;
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: right;
+        border-radius: 10px;
+      }
+
+      #submitButton {
+        width: 5rem;
+        color: rgba(255, 125, 92, 0.8);
+        background-color: transparent;
+        border: none;
+        font-size: 2rem;
+        padding: none;
+        margin: none;
+        outline: none;
+      }
+
+      #submitButton:hover {
+        color: rgba(220, 112, 85, 0.8);
+        border: none;
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link rel="stylesheet" href="/static/style.css" />
   </head>
-  <body>
-    <div>
-      <link href="/static/bot.css" rel="stylesheet" />
-      <div class="bot-container">
-        <div class="bot-bot">
-          <img
-            src="/static/public/external/rectangle2873-8fn-1500w.png"
-            alt="Rectangle2873"
-            class="bot-rectangle2"
-          />
-          <img
-            src="/static/public/external/rectangle23879-14jb-200h.png"
-            alt="Rectangle23879"
-            class="bot-rectangle23"
-          />
-          <img
-            src="/static/public/external/rectangle248710-ym19.svg"
-            alt="Rectangle248710"
-            class="bot-rectangle24"
-          />
-          <span class="bot-text">
-            <span class="bot-text01">SEARCH</span>
-            <span></span>
-          </span>
-          <span class="bot-text03">
-            <span class="bot-text04">ARIVAGAM</span>
-            <span class="bot-text05">.</span>
-          </span>
-          <img
-            src="/static/public/external/rectangle569277-32el-200h.png"
-            alt="Rectangle569277"
-            class="bot-rectangle56"
-          />
-          <span class="bot-text06">
-            <span class="bot-text07">
-              TEST&nbsp; &nbsp; COURSES&nbsp; &nbsp; REPORTS&nbsp; &nbsp;
-              MEET&nbsp; &nbsp; &nbsp;
-            </span>
-            <span class="bot-text08">NANBA</span>
-          </span>
-          <img
-            src="/static/public/external/rectangle519253-7s86-400w.png"
-            alt="Rectangle519253"
-            class="bot-rectangle51"
-          />
-          <img
-            src="/static/public/external/rectangle529254-8tr-900h.png"
-            alt="Rectangle529254"
-            class="bot-rectangle52"
-          />
-          <img
-            src="/static/public/external/rectangle539255-hlqd-600w.png"
-            alt="Rectangle539255"
-            class="bot-rectangle53"
-          />
-          <span class="bot-text14">
-            <span>
-              Hey there! I'm Nanba, your friendly virtual guide here at
-              Arivagam! 🤖👋 Need a hand navigating through this awesome
-              educational website? Look no further! I'm here to make your
-              experience smooth and enjoyable. Just think of me as your trusty
-              sidekick on this learning adventure. Whether you're searching for
-              specific courses, exploring fascinating subjects, or simply
-              curious about anything under the sun, feel free to ask me
-              anything! So, let's dive in and explore the wonders of Arivagam
-              together! How can I assist you today?
-            </span>
-          </span>
-          {% if query %}
-            <div class="boxes"><h4>{{query}}</h4></div> 
-          {% endif %}
-          {% if output %}
-            <div class="box"><h4>{{output}}</h4></div> 
-          {% endif %}
-          <form class="bot-qn" action="/bot" method="POST">
-            <input type="text" class="doubt" placeholder="Ask your doubts here..." name="dbt">
-            <button type="submit" id="button">Ask</button>
-          </form>
-          <img
-            src="/static/public/external/ellipse99265-lo3t-200h.png"
-            alt="Ellipse99265"
-            class="bot-ellipse9"
-          />
-          <div class="bot-group33">
-            <img
-              src="/static/public/external/line1832553-n0yn.svg"
-              alt="Line1832553"
-              class="bot-line183"
-            />
-            <img
-              src="/static/public/external/line1832553-n0yn.svg"
-              alt="Line1832553"
-              class="bot-line1831"
-            />
-            <img
-              src="/static/public/external/line1852553-nnfh.svg"
-              alt="Line1852553"
-              class="bot-line185"
-            />
-            <img
-              src="/static/public/external/line1852553-nnfh.svg"
-              alt="Line1852553"
-              class="bot-line1851"
-            />
-            <img
-              src="/static/public/external/line1852553-nnfh.svg"
-              alt="Line1852553"
-              class="bot-line1852"
-            />
-            <img
-              src="/static/public/external/line1852553-nnfh.svg"
-              alt="Line1852553"
-              class="bot-line1853"
-            />
-            <img
-              src="/static/public/external/line1852553-nnfh.svg"
-              alt="Line1852553"
-              class="bot-line1854"
-            />
-            <img
-              src="/static/public/external/line1872554-6e4m.svg"
-              alt="Line1872554"
-              class="bot-line187"
-            />
-            <span class="bot-text18"><span>NEW CHAT</span></span>
-            <span class="bot-text20"><span>SOLVE THE GIVEN PROBLEM</span></span>
-            <span class="bot-text22"><span>NOTES ON PHOTOSYNTHESIS</span></span>
-            <span class="bot-text24">
-              <span>
-                <span>NAVIGATION ISSUE</span>
-                <br />
-                <span></span>
-              </span>
-            </span>
+  <body class="nanba">
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+      style="background-color: rgba(255, 125, 92, 0.8)"
+      id="mainNav"
+    >
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#" data-translate="navbarTitle"
+          >Arivagam</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <!-- <li class="nav-item"><a class="nav-link" href="bot" data-translate="navbarGroupchat">Nanba</a></li> -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                data-translate="navbarLanguage"
+                >Language</a
+              >
+              <ul
+                class="dropdown-menu"
+                style="
+                  backdrop-filter: blur(7px);
+                  background-color: rgba(255, 182, 86, 0.6);
+                "
+              >
+                <li>
+                  <button onclick="setLanguage('en')" class="dropdown-item">
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button onclick="setLanguage('hi')" class="dropdown-item">
+                    हिंदी
+                  </button>
+                </li>
+                <li>
+                  <button onclick="setLanguage('ta')" class="dropdown-item">
+                    தமிழ்
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 chat-container" id="nanba-body">
+      <div
+        class="row"
+        style="
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div
+          class="col-md-6"
+          style="
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-item: center;
+            justify-content: center;
+          "
+        >
+          <div
+            class="chat-messages"
+            id="chatMessages"
+            style="
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              align-item: center;
+              justify-content: center;
+            "
+          ></div>
+          <div
+            class="fixed-form mt-3"
+            style="
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              align-item: center;
+              justify-content: center;
+            "
+          >
+            <form class="bot-qn" id="chatForm" method="POST">
+              <input
+                type="text"
+                class="form-control doubt"
+                placeholder="Ask your doubts here..."
+                style="
+                  border-radius: 2rem;
+                  background-color: rgba(255, 255, 255, 0.6);
+                "
+                name="dbt"
+              />
+              <button type="submit" id="submitButton">
+                <i class="bx bxs-send"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </body>
-</html> -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>Arivagam-Bot</title>
-  <style>
-    .fixed-form {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f2f2f2;
-      padding: 10px;
-      display: flex;
-      justify-content: center; /* Center the form and button */
-      align-items: center;
-    }
-    .form-control {
-      width: 200%;
-      margin-right: 10px;
-    }
-    .btn-primary {
-      width: 10%; /* Adjust the width as needed */
-    }
-    .bot-qn {
-      width: 50%; /* Set the width to 100% to expand the form */
-      display: flex;
-      align-items: center;
-    }
-    .bot-qn input.doubt {
-      flex: 1; /* Allow the input to take up remaining space */
-      margin-right: 10px; /* Add some spacing between input and button */
-    }
-    .bot-qn button {
-      background-color: #28a745; /* Green color for the button */
-      border-color: #28a745;
-      color: #fff;
-      padding: 10px 20px; /* Adjust padding to make the button more visible */
-      border-radius: 5px;
-    }
-    .chat-container {
-      max-height: 82.5vh;
-      overflow-y: auto;
-      margin-top: 300px; 
-      padding-top: 40px; 
-      padding-bottom: 40px;
-    }
-    .message {
-      margin: 5px;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .query-box {
-      background-color: #f8f9fa;
-      color: black;
-      padding: 10px;
-      margin-bottom: 10px;
-      text-align: left;
-      border-radius: 10px;
-    }
-    .output-box {
-      background-color: #6c757d;
-      color: white;
-      padding: 10px;
-      margin-bottom: 10px;
-      text-align: right;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" style="background-color: rgb(255, 177, 121);" id="mainNav">
-    <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="#" data-translate="navbarTitle">Arivagam</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <!-- <li class="nav-item"><a class="nav-link" href="bot" data-translate="navbarGroupchat">Nanba</a></li> -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbarLanguage">Language</a>
-            <ul class="dropdown-menu">
-              <li><button onclick="setLanguage('en')" class="dropdown-item">English</button></li>
-              <li><button onclick="setLanguage('hi')" class="dropdown-item">हिंदी</button></li>
-              <li><button onclick="setLanguage('ta')" class="dropdown-item">தமிழ்</button></li>
-            </ul>
-          </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbarProfile">Profile</a>
-            <ul class="dropdown-menu">
-              <li><button onclick="editpage()" class="dropdown-item">Edit-Profile</button></li>
-              <li><button onclick="logout()" class="dropdown-item">Sign Out</button></li>
-            </ul>
-          </li>                 -->
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <div class="container mt-5 chat-container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="chat-messages" id="chatMessages">
-          <!-- <div class="query-box"></div>
-          <div class="output-box"></div> -->
-        </div>
-        <div class="fixed-form mt-3">
-          <form class="bot-qn" id="chatForm" method="POST">
-            <input type="text" class="form-control doubt" placeholder="Ask your doubts here..." name="dbt">
-            <button type="submit" class="btn btn-primary" id="submitButton">Ask</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const chatMessages = document.getElementById("chatMessages");
+      const chatForm = document.getElementById("chatForm");
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const chatMessages = document.getElementById('chatMessages');
-    const chatForm = document.getElementById('chatForm');
-
-    function appendMessage(sender, message) {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message');
-      messageDiv.classList.add(sender === 'user' ? 'query-box' : 'output-box');
-      messageDiv.textContent = message;
-      chatMessages.appendChild(messageDiv);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    chatForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const formData = new FormData(chatForm);
-      const query = formData.get('dbt');
-
-      appendMessage('user', query);
-
-      try {
-        const response = await fetch('/bot', {  
-          method: 'POST',
-          body: new URLSearchParams({ dbt: query }),
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-          },
-        });
-        const data = await response.json();
-        appendMessage('bot', data.output);
-      } catch (error) {
-        console.error('Error:', error);
+      function appendMessage(sender, message) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message");
+        messageDiv.classList.add(
+          sender === "user" ? "query-box" : "output-box"
+        );
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
-      chatForm.reset();
-    });
-  </script>
-</body>
+      chatForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData(chatForm);
+        const query = formData.get("dbt");
+
+        appendMessage("user", query);
+
+        try {
+          const response = await fetch("/bot", {
+            method: "POST",
+            body: new URLSearchParams({ dbt: query }),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+            },
+          });
+          const data = await response.json();
+          appendMessage("bot", data.output);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+
+        chatForm.reset();
+      });
+    </script>
+  </body>
 </html>
